@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "macros.html" import input %}
+
+{% block content %}
+<form method="POST">
+    {{ input("x1", "X1") }}
+    {{ input("y1", "Y1") }}
+    {{ input("x2", "X2") }}
+    {{ input("y2", "Y2") }}
+
+    <button type="submit">Calcular distancia</button>
+</form>
+
+{% if distancia is not none %}
+    <h2>Resultado</h2>
+    <p>
+        d = √((x₂ - x₁)² + (y₂ - y₁)²)
+    </p>
+    <p><strong>Distancia = {{ distancia }}</strong></p>
+{% endif %}
+{% endblock %}
